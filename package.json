@@ -28,5 +28,11 @@
     "markdown-it-anchor": "^6.0.0",
     "moment": "^2.29.1",
     "sass": "^1.29.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.13.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-html": "^6.1.0",
+    "prettier": "2.1.2"
   }
 }
