@@ -1,0 +1,50 @@
+.topbar {
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    text-decoration: none;
+    color: get-color('secondary');
+
+    &:hover{
+      color: get-color('primary-glare');
+    }
+  }
+
+  &__languages {
+    font-size: get-size('400');
+    font-weight: 700;
+    color: get-color('secondary-glare');
+    
+    svg {
+      height: get-size('500');
+      display: inline;
+      vertical-align:bottom;
+      margin-inline-end: get-size('200');
+    }
+    
+    li {
+      display: inline-block;
+    }
+    
+    a {
+      color: get-color('secondary-glare');
+      margin-inline-end: 0;
+    }
+
+    a[data-state="active"]{
+      color: get-color('primary-glare');
+      &:hover{
+        color: get-color('primary-glare');
+      }
+    }
+    
+  }
+
+  &__social {
+    a {
+      margin-inline-start: get-size('200');
+    }
+  }
+
+}

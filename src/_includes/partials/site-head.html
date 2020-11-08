@@ -1,20 +1,75 @@
-{# <a class="[ skip-link ] [ button ]" href="#main-content">Skip to content</a> #}
+<a class="[ skip-link ] [ button ]" href="#main-content">Skip to content</a>
 <header role="banner" class="site-head">
   <div class="wrapper">
+
+    <div class="[ topbar ] [ site-head__topbar ] [ font-base ]">
+      <ul class="topbar__languages">
+          <li>
+            {% include "partials/svg/icon-language.svg" %}
+          </li>
+          <li>
+            <a href="/en" {{ helpers.getLinkActiveState('/en/', page.url) | safe }}>EN</a> /
+          </li>
+          <li>
+            <a href="/es" {{ helpers.getLinkActiveState('/es/', page.url) | safe }}>ES</a> /
+          </li>
+          <li>
+            <a href="/ro" {{ helpers.getLinkActiveState('/ro/', page.url) | safe }}>RO</a>
+          </li>
+      </ul>
+      <ul class="topbar__social">
+        <li>
+          <a href="https://www.facebook.com/Timisoara.Tour.Guide">{% include "partials/svg/icon-fb.svg" %}</a>
+          <a href="http://www.tripadvisor.co.uk/Attraction_Review-g298478-d7211668-Reviews-Timisoara_Tour_Guide-Timisoara_Timis_County_Western_Romania_Transylvania.html">{% include "partials/svg/icon-tripadvisor.svg" %}</a>
+          <a href="https://www.youtube.com/user/TimisoaraTourGuide">{% include "partials/svg/icon-youtube.svg" %}</a>
+          <a href="https://www.instagram.com/timisoara_tour_guide/">{% include "partials/svg/icon-instagram.svg" %}</a>
+        </li>
+      </ul>
+    </div>
+
     <div class="site-head__inner">
-      <a href="/" aria-label="Issue 33 - home" class="site-head__brand">
-        {# {% include "partials/brand.svg" %} #}
-      </a>
-      {# <nav class="[ nav ] [ site-head__nav ] [ font-sans ]" aria-label="Primary">
+
+      <div class="site-head__brand-mobile">
+        <img src="/images/timisoara-tour-guide-logo.png" alt="Timisoara Tour Guide Logo" />
+      </div>
+      <!-- /.site-head__brand-mobile -->
+
+      <input type="checkbox" name="check" id="check">
+      <nav class="[ nav ] [ site-head__nav ]" aria-label="Primary">
         <ul class="nav__list">
           <li>
-            <a href="/">Home</a>
+            <a href="/tours">Guided Tours</a>
           </li>
           <li>
-            <a href="/work">Work</a>
+            <a href="/services">Services</a>
+          </li>
+          <li>
+            <a href="/about">About</a>
+          </li>
+          <li class="nav__brand">
+            <a href="/" aria-label="Timisoara Tour Guide">
+              <img src="/images/timisoara-tour-guide-logo-square.png" alt="Timisoara Tour Guide Logo - Square"/>
+            </a>
+          </li>
+          <li>
+            <a href="/media">Media</a>
+          </li>
+          <li>
+            <a href="/blog">Blog</a>
+          </li>
+          <li>
+            <a href="/contact">Contact</a>
           </li>
         </ul>
-      </nav> #}
+      </nav>
+     
+
+      <label for="check" class="hamburger-menu__container">
+          <a class="hamburger-menu" href="#">
+              <div></div>
+          </a>
+      </label>
+
     </div>
   </div>
 </header>

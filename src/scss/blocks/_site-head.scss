@@ -1,0 +1,52 @@
+.site-head {
+  padding: get-size('300') 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+  @include media-query('md') {
+    padding: get-size('600') 0;
+  }
+
+
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__brand-mobile {
+    flex-shrink: 0;
+    margin-inline-end: get-size('600');
+
+    img {
+      height: 3rem;
+    }
+
+    @include media-query('md') {
+      display: none;
+    }
+  }
+
+  &__topbar {
+    padding: 0 0 get-size('300') ;
+    @include media-query('md') {
+      padding: 0 0 get-size('600') ;
+    }
+  }
+
+  &__nav {
+    padding: get-size('300') 0;
+  }
+
+  @include media-query('md') {
+    &__brand {
+      svg {
+        width: 160px;
+      }
+    }
+  }
+}
