@@ -1,0 +1,75 @@
+{
+  "languagePrefix": "ro",
+  "menu": [
+    {
+      "name": "Tururi Ghidate",
+      "url": "",
+      "children": [
+        {
+          "name": "Tururi de Timișoara",
+          "url": "/tururi-de-timisoara/"
+        },
+        {
+          "name": "Tururi Genealogice",
+          "url": "/tururi-genealogice/"
+        },
+        {
+          "name": "Tururi prin România",
+          "url": "/tururi-prin-romania/"
+        }
+      ]
+    },
+    {
+      "name": "Servicii",
+      "url": "",
+      "children": [
+        {
+          "name":"Ce ofer",
+          "url": "/ce-ofer/"
+        },
+        {
+          "name": "Portofoliu",
+          "url": "/portofoliu/"
+        },
+        {
+          "name": "Traduceri si Interpretariat",
+          "url": "/traduceri-si-interpretariat/"
+        }
+      ]
+    },{
+      "name": "Sobre mí",
+      "url": "",
+      "children": [
+        {
+          "name": "Ghidul tău",
+          "url": "/tu-guia/"
+        },
+        {
+          "name":"Recenzii",
+          "url": "/recenzii/"
+        }
+      ]
+    },{
+      "name": "Media",
+      "url": "",
+      "children": [
+        {
+          "name": "Fotos",
+          "url": "/fotos/"
+        },
+        {
+          "name": "În presă",
+          "url": "/de-prin-presa-adunate/"
+        }
+      ]
+    },{
+      "name": "Blog",
+      "url": "/blog/",
+      "children": []
+    },{
+      "name": "Contact",
+      "url": "/contact/",
+      "children": []
+    }
+  ]
+}

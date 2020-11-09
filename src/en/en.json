@@ -1,0 +1,75 @@
+{
+  "languagePrefix": "en",
+  "menu": [
+    {
+      "name": "Guided Tours",
+      "url": "",
+      "children": [
+        {
+          "name": "Guided Tours",
+          "url": "/timisoara-city-tours/"
+        },
+        {
+          "name": "Genealogy Tours",
+          "url": "/genealogy-tours/"
+        },
+        {
+          "name": "Guided Tours of Romania",
+          "url": "/guided-tours-romania/"
+        }
+      ]
+    },
+    {
+      "name": "Services",
+      "url": "",
+      "children": [
+        {
+          "name":"What I do",
+          "url": "/what-i-do/"
+        },
+        {
+          "name": "Portfolio",
+          "url": "/portfolio/"
+        },
+        {
+          "name": "Translation & Interpretation",
+          "url": "/translation-and-interpretation/"
+        }
+      ]
+    },{
+      "name": "About",
+      "url": "",
+      "children": [
+        {
+          "name": "Your Guide",
+          "url": "/your-guide/"
+        },
+        {
+          "name":"Testimonials",
+          "url": "/testimonials/"
+        }
+      ]
+    },{
+      "name": "Media",
+      "url": "",
+      "children": [
+        {
+          "name": "Photos",
+          "url": "/photos/"
+        },
+        {
+          "name": "News Articles",
+          "url": "/in-the-news/"
+        }
+      ]
+    },{
+      "name": "Blog",
+      "url": "/blog/",
+      "children": []
+    },{
+      "name": "Contact Me",
+      "url": "/contact-me/",
+      "children": []
+    }
+  ]
+}

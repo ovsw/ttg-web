@@ -1,0 +1,71 @@
+{
+  "languagePrefix": "es",
+  "menu": [
+    {
+      "name": "Visitas Guidadas",
+      "url": "",
+      "children": [
+        {
+          "name": "Visitas Guidadas en Timisoara",
+          "url": "/visitas-guiadas-en-timisoara/"
+        },
+        {
+          "name": "Visitas guiadas en Rumanía",
+          "url": "/visitas-guiadas-en-rumania/"
+        }
+      ]
+    },
+    {
+      "name": "Servicios",
+      "url": "",
+      "children": [
+        {
+          "name":"Loque yo hago",
+          "url": "/lo-que-yo-hago/"
+        },
+        {
+          "name": "Cartera",
+          "url": "/cartera-de-clientes/"
+        },
+        {
+          "name": "Traducción e Interpretación",
+          "url": "/translation-and-interpretation/"
+        }
+      ]
+    },{
+      "name": "Sobre mí",
+      "url": "",
+      "children": [
+        {
+          "name": "Tu guía",
+          "url": "/tu-guia/"
+        },
+        {
+          "name":"Testimoniales",
+          "url": "/testimoniales/"
+        }
+      ]
+    },{
+      "name": "Medios",
+      "url": "",
+      "children": [
+        {
+          "name": "Fotos",
+          "url": "/fotos/"
+        },
+        {
+          "name": "En la Presa",
+          "url": "/en-la-prensa/"
+        }
+      ]
+    },{
+      "name": "Blog",
+      "url": "/blog/",
+      "children": []
+    },{
+      "name": "Contact Me",
+      "url": "/contact-me/",
+      "children": []
+    }
+  ]
+}
