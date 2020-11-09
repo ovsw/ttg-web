@@ -4,7 +4,7 @@
 
   a {
     text-decoration: none;
-    color: get-color('secondary');
+    color: get-color('secondary-glare');
 
     &:hover{
       color: get-color('primary-glare');
@@ -25,10 +25,13 @@
     
     li {
       display: inline-block;
+      &:hover {
+        transform: scale(1.1);
+        transition: .1s;
+      }
     }
     
     a {
-      color: get-color('secondary-glare');
       margin-inline-end: 0;
     }
 
@@ -42,8 +45,17 @@
   }
 
   &__social {
+    li {
+      display: inline-block;
+    }
+    li:hover {
+      transform: scale(1.1);
+      transition: .1s;
+    }
+
     a {
       margin-inline-start: get-size('200');
+     
     }
   }
 

@@ -1,18 +1,17 @@
-$heading-height: 8.2rem;
+$heading-height: 7.2rem;
 
 .nav {
   display: flex; 
   line-height: 1;
   font-weight: 700;
-  margin-top: -#{get-size('400')};
-  margin-inline-start: -#{get-size('400')};
+  width: 100%;
 
   // from tut
   position: fixed;
-  height: calc(100vh - $heading-height);
+  height: calc(100vh - #{$heading-height});
   top: $heading-height;
   left: 0;
-  background-color: #69bde7;
+  background-color: get-color('light-glare');;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
@@ -21,11 +20,12 @@ $heading-height: 8.2rem;
   transform: translateX(100%);
   transition: .65s;
 
-  #check:checked ~ &{
+  &[data-open="true"]{
     transform: translateX(0);
   }
 
   @include media-query('md') {
+    padding: 0 get-size('400');
     display: block;
     position: static;
     background-color: transparent;
@@ -33,17 +33,28 @@ $heading-height: 8.2rem;
     transform: translateX(0);
     overflow-x: visible;
     overflow-y: visible;
-    width: 100%;
+    transition: none;
   }
   
   &__list {
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: stretch;
 
-    > * {
-      padding-top: get-size('400');
-      padding-inline-start: get-size('400');
+    > li {
+      padding: get-size('400');
+      border-bottom: 1px solid rgba(get-color('secondary'), 0.3);
+
+      @include media-query('md') {
+        border: none;
+      }
+    }
+
+    @include media-query('md') {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
     }
   }
 
@@ -51,6 +62,13 @@ $heading-height: 8.2rem;
     text-decoration: none;
     display: block;
     position: relative;
+    color: get-color('secondary');
+    
+    &:hover {
+      transform: scale(1.1);
+      transition: .1s;
+      color: get-color('primary');
+    }
 
     // Adds the fake border to active state items
     &[data-state='active'],

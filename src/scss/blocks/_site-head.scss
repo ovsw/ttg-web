@@ -9,8 +9,6 @@
     padding: get-size('600') 0;
   }
 
-
-
   &__inner {
     display: flex;
     flex-wrap: wrap;
@@ -36,10 +34,6 @@
     @include media-query('md') {
       padding: 0 0 get-size('600') ;
     }
-  }
-
-  &__nav {
-    padding: get-size('300') 0;
   }
 
   @include media-query('md') {

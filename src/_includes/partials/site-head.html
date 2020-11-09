@@ -19,32 +19,38 @@
       </ul>
       <ul class="topbar__social">
         <li>
-          <a href="https://www.facebook.com/Timisoara.Tour.Guide">{% include "partials/svg/icon-fb.svg" %}</a>
-          <a href="http://www.tripadvisor.co.uk/Attraction_Review-g298478-d7211668-Reviews-Timisoara_Tour_Guide-Timisoara_Timis_County_Western_Romania_Transylvania.html">{% include "partials/svg/icon-tripadvisor.svg" %}</a>
-          <a href="https://www.youtube.com/user/TimisoaraTourGuide">{% include "partials/svg/icon-youtube.svg" %}</a>
-          <a href="https://www.instagram.com/timisoara_tour_guide/">{% include "partials/svg/icon-instagram.svg" %}</a>
+          <a href="https://www.facebook.com/Timisoara.Tour.Guide" target="_blank" rel="noopener noreferrer">{% include "partials/svg/icon-fb.svg" %}</a>
+        </li>
+        <li>
+          <a href="http://www.tripadvisor.co.uk/Attraction_Review-g298478-d7211668-Reviews-Timisoara_Tour_Guide-Timisoara_Timis_County_Western_Romania_Transylvania.html" target="_blank" rel="noopener noreferrer">{% include "partials/svg/icon-tripadvisor.svg" %}</a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/user/TimisoaraTourGuide" target="_blank" rel="noopener noreferrer">{% include "partials/svg/icon-youtube.svg" %}</a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/timisoara_tour_guide/" target="_blank" rel="noopener noreferrer">{% include "partials/svg/icon-instagram.svg" %}</a>
         </li>
       </ul>
     </div>
 
-    <div class="site-head__inner">
+    <div class="site-head__inner" x-data="{ isOpen: false }">
 
       <div class="site-head__brand-mobile">
-        <img src="/images/timisoara-tour-guide-logo.png" alt="Timisoara Tour Guide Logo" />
+        <a href="/">
+          <img src="/images/timisoara-tour-guide-logo.png" alt="Timisoara Tour Guide Logo" />
+        </a>
       </div>
-      <!-- /.site-head__brand-mobile -->
-
-      <input type="checkbox" name="check" id="check">
-      <nav class="[ nav ] [ site-head__nav ]" aria-label="Primary">
+     
+      <nav class="[ nav ] [ site-head__nav ]" aria-label="Main Menu" x-bind:data-open="isOpen" :aria-expanded="isOpen" id="nav-list">
         <ul class="nav__list">
           <li>
-            <a href="/tours">Guided Tours</a>
+            <a href="/tours/">Guided Tours</a>
           </li>
           <li>
-            <a href="/services">Services</a>
+            <a href="/services/">Services</a>
           </li>
           <li>
-            <a href="/about">About</a>
+            <a href="/about/">About</a>
           </li>
           <li class="nav__brand">
             <a href="/" aria-label="Timisoara Tour Guide">
@@ -52,23 +58,30 @@
             </a>
           </li>
           <li>
-            <a href="/media">Media</a>
+            <a href="/media/">Media</a>
           </li>
           <li>
-            <a href="/blog">Blog</a>
+            <a href="/blog/">Blog</a>
           </li>
           <li>
-            <a href="/contact">Contact</a>
+            <a href="/contact/">Contact</a>
           </li>
         </ul>
       </nav>
      
 
-      <label for="check" class="hamburger-menu__container">
-          <a class="hamburger-menu">
+      <div class="hamburger-menu__container">
+          <button 
+            aria-controls="nav-list" 
+            aria-label="Main Menu toggle" 
+            :aria-expanded="isOpen" 
+            class="hamburger-menu"  
+            @click.prevent="isOpen = !isOpen" 
+            x-bind:data-open="isOpen" 
+            >
               <div></div>
-          </a>
-      </label>
+          </button>
+      </div>
 
     </div>
   </div>
