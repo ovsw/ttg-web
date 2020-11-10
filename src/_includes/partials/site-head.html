@@ -43,29 +43,33 @@
      
       <nav class="[ nav ] [ site-head__nav ]" aria-label="Main Menu" x-bind:data-open="isOpen" :aria-expanded="isOpen" id="nav-list">
         <ul class="nav__list">
-          <li>
-            <a href="/tours/">Guided Tours</a>
-          </li>
-          <li>
-            <a href="/services/">Services</a>
-          </li>
-          <li>
-            <a href="/about/">About</a>
-          </li>
+
+          {% macro generateNavItems(navObject = {}, start = 0, end = 3) %}
+            {% for i in range(start,end) -%}
+              {% if navObject[i].children.length > 0 %}
+              <li>
+                <button>{{navObject[i].name}}</button>
+                <ul class="nav__submenu">
+                  {% for subItem in navObject[i].children %}
+                  <li><a href="/{{languagePrefix}}{{subItem.url}}">{{subItem.name}}</a></li>
+                  {% endfor %}
+                  <div class="arrow"></div>
+                </ul>
+              </li>
+              {% else %}            
+              <li><a href="/{{languagePrefix}}{{navObject[i].url}}">{{navObject[i].name}}</a></li>            
+              {% endif %}
+            {%- endfor %}
+          {% endmacro %}
+
+          {{ generateNavItems(menu, 0, 3) }}
           <li class="nav__brand">
             <a href="/" aria-label="Timisoara Tour Guide">
               <img src="/images/timisoara-tour-guide-logo-square.png" alt="Timisoara Tour Guide Logo - Square"/>
             </a>
           </li>
-          <li>
-            <a href="/media/">Media</a>
-          </li>
-          <li>
-            <a href="/blog/">Blog</a>
-          </li>
-          <li>
-            <a href="/contact/">Contact</a>
-          </li>
+          {{ generateNavItems(menu, 3, 6) }}
+
         </ul>
       </nav>
      
