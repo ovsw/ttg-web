@@ -27,7 +27,7 @@ $mobileMenuItemBorder: 1px solid rgba(get-color('secondary'), 0.3);
   @include media-query('md') {
     display: flex; 
     border-top: none;
-    padding: 0 get-size('400');
+    padding: 0;
     display: block;
     position: static;
     background-color: transparent;
@@ -45,7 +45,6 @@ $mobileMenuItemBorder: 1px solid rgba(get-color('secondary'), 0.3);
     @include media-query('md') {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
       flex-direction: row;
     }
 
@@ -56,37 +55,46 @@ $mobileMenuItemBorder: 1px solid rgba(get-color('secondary'), 0.3);
       
       @include media-query('md') {
         border: none;
-        padding: get-size('400');
+        display: flex;
+        justify-content: center;
       }
 
       > a, > button {
-        outline-offset: -0.25rem;
         width: 100%;
+        display: flex;
         background: none;
         border: none;
         cursor: pointer;
         text-decoration: none;
-        display: flex;
+        justify-content: space-between;
         align-items: center;
         position: relative;
         color: get-color('secondary');
-        padding: get-size('300') get-size('300');;
-        text-align: left;
+        padding: get-size('300');
+        outline-offset: -0.25rem;
         
-
+        
+        
         svg {
           width: 1rem;
           height: 1rem;
-          transform: translateY(2px);
           margin-left: 0.25rem;
         }
         
         &:hover {
           color: get-color('primary');
         }
+        
+        @media screen and (min-width: 960px) {
+          white-space: nowrap;
+        }
+
         @include media-query('md') {
+          font-size: 1.1rem;
+          padding: 0;
+          margin: get-size('300');
+          width: auto;
           outline-offset: 0.25rem;
-          text-align: center;
           &:hover {
             transform: scale(1.1);
             transition: .1s;
@@ -119,7 +127,7 @@ $mobileMenuItemBorder: 1px solid rgba(get-color('secondary'), 0.3);
   li.nav__brand {
     display: none;
     position: relative;
-    width: 100%;
+    flex: 0 0 140px;
 
     @include media-query('md') {
       display: block;
@@ -128,11 +136,15 @@ $mobileMenuItemBorder: 1px solid rgba(get-color('secondary'), 0.3);
     a {
       display: block;
       position: absolute;    
-      bottom: -30px;
+      bottom: -20px;
       left: 0px;
-      width: 120px;
-      height: 120px;
       display: block;
+      padding: 0!important;
+
+      img {
+        width: 140px;
+        height: 120px;
+      }
      }
   }
 
@@ -141,11 +153,11 @@ $mobileMenuItemBorder: 1px solid rgba(get-color('secondary'), 0.3);
     position: relative;
     
     @include media-query('md') {
-      padding: get-size('400');
+      padding: get-size('400') 0;
       width: 12rem;
       position: absolute;
-      top: 100%;
-      left: get-size('600');
+      top: 105%;
+      left: 0.2rem;
       box-shadow: 
       0 2px 4px rgba(get-color('secondary'), 0.05),
       0 2px 18px 3px rgba(get-color('secondary'), 0.1);
@@ -179,13 +191,16 @@ $mobileMenuItemBorder: 1px solid rgba(get-color('secondary'), 0.3);
 
     a {
       font-size: 1rem;
-      padding: get-size('200') get-size('500');;
+      padding: get-size('200') get-size('500');
+      color: rgba(get-color('secondary'), 0.7);
       display: block;
       text-decoration: none;
       // text-transform: uppercase;
       // letter-spacing: 0.05em;
-      font-weight: 400;
+      font-weight: 700;
       line-height: 1.3;
+      outline-offset: -0.25rem;
+
     }
   }
   

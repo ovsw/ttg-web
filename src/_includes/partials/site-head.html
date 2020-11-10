@@ -63,8 +63,7 @@
                   aria-expanded="false"
                   @click="subMenu{{i}}isOpen = !subMenu{{i}}isOpen"
                 >
-                  {{navObject[i].name}} 
-                  {% include "partials/svg/icon-caret-down.svg" %}
+                  {{-navObject[i].name-}} {%- include "partials/svg/icon-caret-down.svg" -%}
                 </button>
                 
                 <ul class="nav__submenu"
