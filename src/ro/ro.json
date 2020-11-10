@@ -37,12 +37,12 @@
         }
       ]
     },{
-      "name": "Sobre mí",
+      "name": "Despre mine",
       "url": "",
       "children": [
         {
           "name": "Ghidul tău",
-          "url": "/tu-guia/"
+          "url": "/ghidul-tau/"
         },
         {
           "name":"Recenzii",
@@ -54,8 +54,8 @@
       "url": "",
       "children": [
         {
-          "name": "Fotos",
-          "url": "/fotos/"
+          "name": "Fotografii",
+          "url": "/fotografii/"
         },
         {
           "name": "În presă",
