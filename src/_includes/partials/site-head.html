@@ -33,7 +33,7 @@
       </ul>
     </div>
 
-    <div class="site-head__inner" x-data="{ isOpen: false }">
+    <div class="site-head__inner" x-data="{ mainMenuisOpen: false }">
 
       <div class="site-head__brand-mobile">
         <a href="/">
@@ -41,15 +41,39 @@
         </a>
       </div>
      
-      <nav class="[ nav ] [ site-head__nav ]" aria-label="Main Menu" x-bind:data-open="isOpen" :aria-expanded="isOpen" id="nav-list">
+      <nav class="[ nav ] [ site-head__nav ]" 
+        id="nav-list"
+        aria-label="Main Menu" 
+        x-bind:data-open="mainMenuisOpen" 
+        :aria-expanded="mainMenuisOpen" 
+      >
         <ul class="nav__list">
 
           {% macro generateNavItems(navObject = {}, start = 0, end = 3) %}
             {% for i in range(start,end) -%}
               {% if navObject[i].children.length > 0 %}
-              <li>
-                <button>{{navObject[i].name}}</button>
-                <ul class="nav__submenu">
+                
+              <li
+                x-data="{ subMenu{{i}}isOpen: false }"
+              >
+                <button
+                  aria-label="{{ navObject[i].name}} sub-menu toggle"
+                  aria-controls="{{ navObject[i].name | makeId}}-submenu" 
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  @click="subMenu{{i}}isOpen = !subMenu{{i}}isOpen"
+                >
+                  {{navObject[i].name}} 
+                  {% include "partials/svg/icon-caret-down.svg" %}
+                </button>
+                
+                <ul class="nav__submenu"
+                  x-show="subMenu{{i}}isOpen"
+                  @click.away="subMenu{{i}}isOpen = false"
+                  id="{{ navObject[i].name | makeId}}-submenu" 
+                  aria-label="{{ navObject[i].name}} sub-menu"
+                  {# :data-show="submenuVisible" #}
+                >
                   {% for subItem in navObject[i].children %}
                   <li><a href="/{{languagePrefix}}{{subItem.url}}">{{subItem.name}}</a></li>
                   {% endfor %}
@@ -64,7 +88,7 @@
 
           {{ generateNavItems(menu, 0, 3) }}
           <li class="nav__brand">
-            <a href="/" aria-label="Timisoara Tour Guide">
+            <a href="/" aria-label="Timisoara Tour Guide home page">
               <img src="/images/timisoara-tour-guide-logo-square.png" alt="Timisoara Tour Guide Logo - Square"/>
             </a>
           </li>
@@ -78,10 +102,10 @@
           <button 
             aria-controls="nav-list" 
             aria-label="Main Menu toggle" 
-            :aria-expanded="isOpen" 
+            :aria-expanded="mainMenuisOpen" 
             class="hamburger-menu"  
-            @click.prevent="isOpen = !isOpen" 
-            x-bind:data-open="isOpen" 
+            @click.prevent="mainMenuisOpen = !mainMenuisOpen" 
+            x-bind:data-open="mainMenuisOpen" 
             >
               <div></div>
           </button>

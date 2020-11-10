@@ -1,6 +1,8 @@
 module.exports = config => {
   // Set directories to pass through to the dist folder
   config.addPassthroughCopy('./src/images/');
+  // Copy `./src/js/` to the dist folder
+  config.addPassthroughCopy("./src/js/");
 
   // process markdown from Sanity
   let markdownIt = require("markdown-it");
@@ -25,6 +27,11 @@ module.exports = config => {
     return md.render(value)
   })
   // end markdown 
+
+  // Nunjucks Filter for converting sring to kebab-case
+  config.addNunjucksFilter("makeId", function(value) {
+     return value.replace(/\s+/g, '-').toLowerCase()
+  });
 
   // Tell 11ty to use the .eleventyignore and ignore our .gitignore file
   config.setUseGitIgnore(false);
